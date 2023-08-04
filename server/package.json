@@ -1,7 +1,7 @@
 {
   "name": "shop-server",
   "version": "1.0.0",
-  "description": "Интернет магазин, сервер",
+  "description": "1",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
     "PostgreSQL",
     "sequelize"
   ],
-  "author": "Евгений Токмаков",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"

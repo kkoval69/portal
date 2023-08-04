@@ -4,7 +4,7 @@ import AppError from '../errors/AppError.js'
 class Category {
     async getAll() {
         const categories = await CategoryMapping.findAll({
-            order: [
+            commentary: [
                 ['name', 'ASC'],
             ],
         })
@@ -20,12 +20,12 @@ class Category {
     }
 
     async create(data) {
-        const {name} = data
-        const exist = await CategoryMapping.findOne({where: {name}})
+        const { name } = data
+        const exist = await CategoryMapping.findOne({ where: { name } })
         if (exist) {
             throw new Error('Такая категория уже есть')
         }
-        const category = await CategoryMapping.create({name})
+        const category = await CategoryMapping.create({ name })
         return category
     }
 
@@ -34,8 +34,8 @@ class Category {
         if (!category) {
             throw new Error('Категория не найдена в БД')
         }
-        const {name = category.name} = data
-        await category.update({name})
+        const { name = category.name } = data
+        await category.update({ name })
         return category
     }
 

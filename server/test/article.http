@@ -1,0 +1,42 @@
+### Список всех новостей
+GET /api/article/getall HTTP/1.1
+Host: localhost:7000
+
+GET /api/article/getone/7 HTTP/1.1
+Host: localhost:7000
+
+POST /api/article/create HTTP/1.1
+Host: localhost:7000
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain; charset=utf-8
+
+Новость 111
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="description"
+Content-Type: text/plain; charset=utf-8
+
+
+### Обновить новость
+PUT /api/article/update/4 HTTP/1.1
+Host: localhost:7000
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain; charset=utf-8
+
+Новость № 4 (new)
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="description"
+Content-Type: text/plain; charset=utf-8
+
+99999
+
+
+
+### Удалить новость
+DELETE /api/article/delete/5 HTTP/1.1
+Host: localhost:7000
